@@ -1,10 +1,10 @@
 """Score Korean article text with a fine-tuned LEPOS KoELECTRA classifier.
 
 The research pipeline (see ``notebooks/05_model_fine_tuning``) produced a
-cascade of KoELECTRA classifiers: A0 (irrelevant-article filter), A2 (ESG
-relevance), A3 (ESG sentiment: negative/neutral/positive), and C (E/S/G
-pillar). This script runs inference with any of those checkpoints so the
-labeling step can be reproduced outside Colab.
+cascade of KoELECTRA classifiers: the off-topic filter, the ESG-relevance
+classifier, the ESG-sentiment classifier (negative/neutral/positive), and the
+E/S/G pillar classifier. This script runs inference with any of those
+checkpoints so the labeling step can be reproduced outside Colab.
 
 Usage::
 
@@ -30,7 +30,7 @@ def main() -> None:
     parser.add_argument(
         "--labels", default=None,
         help="Optional comma-separated label names in class-index order "
-             "(e.g. '부정,중립,긍정' for the A3 sentiment model)")
+             "(e.g. '부정,중립,긍정' for the ESG-sentiment classifier)")
     parser.add_argument("texts", nargs="+", help="One or more texts to classify")
     args = parser.parse_args()
 

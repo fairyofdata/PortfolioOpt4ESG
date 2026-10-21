@@ -61,7 +61,9 @@ volatility and about half the maximum drawdown.
 
 ## 🏗️ How It Works
 
-![Architecture](docs/architecture.png)
+![LEPOS system flowchart](docs/flowchart/flowchart_current_en.png)
+
+<sub>ISO 5807 flowchart · editable source: [`docs/flowchart/lepos_flowchart.drawio`](docs/flowchart/lepos_flowchart.drawio)</sub>
 
 ### 1. Text data pipeline (research, in `notebooks/`)
 
@@ -70,18 +72,18 @@ Naver News, cleaned (company-name normalization & anonymization, metadata remova
 and passed through a cascade of fine-tuned **KoELECTRA** classifiers whose labels were
 bootstrapped with the OpenAI API (GPT-3.5-turbo):
 
-| Model | Task | Output | Accuracy / R² |
-|---|---|---|---|
-| A0 | Filter irrelevant articles | keep / drop | 0.69 |
-| A1 | Company relevance | relevant / not | — |
-| A2 | ESG relevance | relevant / not | 0.76 |
-| A3 | ESG sentiment | −1 / 0 / +1 | 0.73 |
-| B1 | Agency-style ESG score regression | 0.0–7.0 per agency | R² 0.69 |
-| C | E/S/G sector classification | per-pillar flags | 0.83 |
+| Model | Output | Accuracy / R² |
+|---|---|---|
+| Off-topic filter | keep / drop | 0.69 |
+| Company-relevance classifier | relevant / not | — |
+| ESG-relevance classifier | relevant / not | 0.76 |
+| ESG-sentiment classifier | −1 / 0 / +1 | 0.73 |
+| Agency-aligned ESG scorer | 0.0–7.0 per agency | R² 0.69 |
+| E/S/G pillar classifier | per-pillar flags | 0.83 |
 
-Model B1 is trained per agency (5 models) on article text plus quantitative domain
-data (emissions, board composition, financials), so it reproduces each agency's rating
-tendencies — and can score companies the agencies don't cover.
+The agency-aligned scorer is trained per agency (5 models) on article text plus
+quantitative domain data (emissions, board composition, financials), so it reproduces
+each agency's rating tendencies — and can score companies the agencies don't cover.
 
 Classifier inference can be reproduced with any of the fine-tuned checkpoints via
 [`scripts/score_text.py`](scripts/score_text.py).
@@ -117,7 +119,7 @@ LLM_ESG_POS/
 │   ├── processed/           # ESG score tables (2019–2023), company profiles
 │   ├── dummy/               # sample data for experimentation
 │   └── user/                # runtime state (gitignored)
-├── docs/                    # architecture, final report, presentation
+├── docs/                    # flowcharts (draw.io source + PNG), presentation
 │   └── research/            # backtesting study (RESEARCH.md + data + charts)
 ├── scripts/                 # standalone tools (e.g. KoELECTRA inference demo)
 ├── tests/                   # pytest suite (scoring / loading / optimization)
@@ -154,12 +156,21 @@ pytest
 
 - [Exhibition presentation (KR, PPTX)](docs/presentation_kr.pptx)
 - [Backtesting research](docs/research/RESEARCH.md)
-- System diagram: [docs/system_diagram_kr.png](docs/system_diagram_kr.png)
+- [System flowchart source (draw.io)](docs/flowchart/lepos_flowchart.drawio)
+
+<details>
+<summary><sub>Earlier design</sub></summary>
+
+<sub>The exhibition presentation (Dec 2024) describes an earlier optimization design
+(CVXOPT quadratic program). It is kept for reference:
+[flowchart — exhibition version](docs/flowchart/flowchart_exhibition_2024_en.png).</sub>
+
+</details>
 
 ## 🔭 Future Extensions
 
-1. **Coverage expansion**: extend scoring to ~1,000 companies (B2 model) including
-   startups and unlisted companies where agency ratings don't exist.
+1. **Coverage expansion**: extend scoring to ~1,000 companies, including startups and
+   unlisted companies where agency ratings don't exist.
 2. **Real-time scoring**: refresh ESG scores from live news streams.
 3. **Optimization constraints**: sector caps and turnover limits.
 4. **Per-agency trust weighting**: expose the research-grade P/Q design (agency-level
@@ -169,9 +180,10 @@ pytest
 
 **KWU 8th Industry-Academic Cooperation SW Project & College of SW Convergence Graduation Project**
 
-- **Team KWargs**: Baek Ji-heon (PM · preprocessing, NLP models A0/C, optimization),
-  Kim Na-yeon (FE · crawling pipeline, Streamlit UI), Jang Han-jae (BE · labeling
-  pipeline, NLP models A2/A3/B1)
+- **Team KWargs**: Baek Ji-heon (PM · preprocessing, off-topic filter and E/S/G pillar
+  classifier, optimization), Kim Na-yeon (FE · crawling pipeline, Streamlit UI),
+  Jang Han-jae (BE · labeling pipeline, ESG-relevance / ESG-sentiment classifiers,
+  agency-aligned scorer)
 - **Adviser**: Prof. Cho Min-soo (Dept. of Information Convergence, Kwangwoon Univ.)
 - **Partner company**: Billions Lab (Dr. Pyo Su-jin)
 - **Software registration**: C-2024-042035

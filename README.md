@@ -11,7 +11,7 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
 ![License](https://img.shields.io/badge/license-MIT-green)
-[![tests](https://github.com/fairyofdata/LLM_ESG_POS/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/LLM_ESG_POS/actions/workflows/tests.yml)
+[![tests](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml)
 
 LEPOS evaluates the ESG (Environmental / Social / Governance) profile of Korean listed
 companies **directly from news text using LLMs and fine-tuned Korean language models**,
@@ -102,7 +102,7 @@ Classifier inference can be reproduced with any of the fine-tuned checkpoints vi
 ## 📁 Project Structure
 
 ```text
-LLM_ESG_POS/
+PortfolioOpt4ESG/
 ├── app/                     # Streamlit UI (st.navigation multipage)
 │   ├── main.py              #   entry point
 │   └── pages/               #   home, survey, portfolio dashboard, news, ESG intro
@@ -129,8 +129,8 @@ LLM_ESG_POS/
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/fairyofdata/LLM_ESG_POS.git
-cd LLM_ESG_POS
+git clone https://github.com/fairyofdata/PortfolioOpt4ESG.git
+cd PortfolioOpt4ESG
 pip install -r requirements.txt
 streamlit run app/main.py
 ```

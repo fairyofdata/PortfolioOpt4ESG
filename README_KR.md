@@ -11,7 +11,7 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
 ![License](https://img.shields.io/badge/license-MIT-green)
-[![tests](https://github.com/fairyofdata/LLM_ESG_POS/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/LLM_ESG_POS/actions/workflows/tests.yml)
+[![tests](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml)
 
 LEPOS는 **LLM과 파인튜닝된 한국어 언어 모델로 뉴스 텍스트에서 직접** 국내 상장사의
 ESG(환경/사회/지배구조)를 평가하고, 사용자의 ESG 선호도를 투자자 전망(view)으로
@@ -99,7 +99,7 @@ KOSPI 68개사의 뉴스 기사(2019–2023, **138만 건**)를 네이버 뉴스
 ## 📁 프로젝트 구조
 
 ```text
-LLM_ESG_POS/
+PortfolioOpt4ESG/
 ├── app/                     # Streamlit UI (st.navigation 멀티페이지)
 │   ├── main.py              #   진입점
 │   └── pages/               #   홈, 설문, 포트폴리오 대시보드, 뉴스, ESG 소개
@@ -126,8 +126,8 @@ LLM_ESG_POS/
 ## 🚀 실행 방법
 
 ```bash
-git clone https://github.com/fairyofdata/LLM_ESG_POS.git
-cd LLM_ESG_POS
+git clone https://github.com/fairyofdata/PortfolioOpt4ESG.git
+cd PortfolioOpt4ESG
 pip install -r requirements.txt
 streamlit run app/main.py
 ```

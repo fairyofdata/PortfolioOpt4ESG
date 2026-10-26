@@ -1,12 +1,14 @@
-**🌐 Available Versions:** [🇰🇷 한국어 (Korean)](/README_KR.md) | [🇯🇵 日本語 (Japanese)](/README_JP.md)
+<!-- Source: README_KR.md (Korean is the source; English and Japanese are translations) · synced 2026-10-26 -->
 
----
+# PortfolioOpt4ESG — LLM-based ESG-focused portfolio optimization (LEPOS) 📊🌱
 
-# LEPOS: LLM-based ESG-Focused Portfolio Optimization Service 📊🌱
+[English](README.md) · [한국어](README_KR.md) · [日本語](README_JP.md)
 
 > 🏆🥈 Excellence Award (2nd) — 8th Industry-Academia SW Project Exhibition, Kwangwoon University
 > 🏆🥈 Excellence Award (2nd) — 2024 Graduation Exhibition, Kwangwoon University College of SW Convergence
 > 📄 Published in *Computational Economics* (Springer, 2026) — [doi:10.1007/s10614-026-11413-9](https://doi.org/10.1007/s10614-026-11413-9)
+
+*The service is called LEPOS; the repository was formerly `LLM_ESG_POS`.*
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
@@ -57,6 +59,11 @@ stricter check — annual buy-and-hold with realistic Korean-market trading cost
 cumulative return falls to **1.319**, still above every benchmark, with ~25 % lower
 volatility and about half the maximum drawdown.
 
+**Limitations** (as stated in the research document):
+- The universe is today's 68 large caps, so there is survivorship bias.
+- One 5-year window, and τ was selected in-sample.
+- The contribution of the ESG signal itself is not isolated. A run with the ESG views switched off needs the study's optimizer, whose code is not in this repository.
+
 ➡️ Full methodology, robustness checks, and reproducible data: [docs/research/RESEARCH.md](docs/research/RESEARCH.md)
 
 ## 🏗️ How It Works
@@ -80,6 +87,8 @@ bootstrapped with the OpenAI API (GPT-3.5-turbo):
 | ESG-sentiment classifier | −1 / 0 / +1 | 0.73 |
 | Agency-aligned ESG scorer | 0.0–7.0 per agency | R² 0.69 |
 | E/S/G pillar classifier | per-pillar flags | 0.83 |
+
+<sub>— : no evaluation figure for the company-relevance classifier survives in the training notebook's output, so none is given.</sub>
 
 The agency-aligned scorer is trained per agency (5 models) on article text plus
 quantitative domain data (emissions, board composition, financials), so it reproduces

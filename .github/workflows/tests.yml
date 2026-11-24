@@ -1,3 +1,4 @@
+# Steps come from the shared reusable workflows in fairyofdata/Concordia (docs/DECISIONS.md D1).
 name: tests
 
 on:
@@ -6,19 +7,16 @@ on:
   pull_request:
     branches: [master]
 
+permissions:
+  contents: read
+
 jobs:
   pytest:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.11", "3.12"]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
-      - name: Install test dependencies
-        run: pip install pandas numpy scipy scikit-learn pytest
-      - name: Run test suite
-        run: pytest -v
+    uses: fairyofdata/Concordia/.github/workflows/python-tests.yml@v1
+    with:
+      python-versions: '["3.11", "3.12"]'
+      install: pip install pandas numpy scipy scikit-learn pytest
+      test: pytest -v
+
+  hygiene:
+    uses: fairyofdata/Concordia/.github/workflows/hygiene.yml@v1

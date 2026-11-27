@@ -1,5 +1,5 @@
 {
-  "name": "LEPOS (Python 3)",
+  "name": "PortfolioOpt4ESG (Python 3)",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "customizations": {
     "codespaces": {

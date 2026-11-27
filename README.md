@@ -1,6 +1,6 @@
-<!-- Source: README_KR.md (Korean is the source; English and Japanese are translations) · synced 2026-10-26 -->
+<!-- Source: README_KR.md (Korean is the source; English and Japanese are translations) · synced 2026-11-27 -->
 
-# PortfolioOpt4ESG — LLM-based ESG-focused portfolio optimization (LEPOS) 📊🌱
+# PortfolioOpt4ESG — LLM-based ESG-focused portfolio optimization 📊🌱
 
 [English](README.md) · [한국어](README_KR.md) · [日本語](README_JP.md)
 
@@ -8,20 +8,20 @@
 > 🏆🥈 Excellence Award (2nd) — 2024 Graduation Exhibition, Kwangwoon University College of SW Convergence
 > 📄 Published in *Computational Economics* (Springer, 2026) — [doi:10.1007/s10614-026-11413-9](https://doi.org/10.1007/s10614-026-11413-9)
 
-*The service is called LEPOS; the repository was formerly `LLM_ESG_POS`.*
+*The repository was formerly `LLM_ESG_POS`. Earlier materials, including the flowcharts, use the old service name LEPOS.*
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
 ![License](https://img.shields.io/badge/license-MIT-green)
 [![tests](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml)
 
-LEPOS evaluates the ESG (Environmental / Social / Governance) profile of Korean listed
+PortfolioOpt4ESG evaluates the ESG (Environmental / Social / Governance) profile of Korean listed
 companies **directly from news text using LLMs and fine-tuned Korean language models**,
 then builds a **personalized portfolio** with a Black-Litterman optimizer that treats
 the user's ESG preferences as investor views.
 
 Traditional ESG ratings are opaque, disagree across agencies, and cover only large
-companies. LEPOS addresses all three: the scoring pipeline is fully transparent, it
+companies. PortfolioOpt4ESG addresses all three: the scoring pipeline is fully transparent, it
 learns the rating behaviour of five agencies (MSCI, S&P, Sustainalytics, ISS, KCGS),
 and — because it needs only text — it can score companies that no agency covers.
 
@@ -47,9 +47,9 @@ metric**:
 | KOSPI | 1.092 | 0.018 | 0.202 | 0.190 | 0.357 | 0.051 |
 | ESG ETF | 1.159 | 0.031 | 0.203 | 0.251 | 0.352 | 0.087 |
 | Equal-weighted | 1.247 | 0.046 | 0.204 | 0.323 | 0.362 | 0.128 |
-| **LEPOS (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
+| **PortfolioOpt4ESG (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
 
-The LEPOS row is the τ = 0.5 run, whose yearly weights are included in the repository
+The PortfolioOpt4ESG row is the τ = 0.5 run, whose yearly weights are included in the repository
 and whose return series is independently reproduced by
 [`robustness_backtest.py`](docs/research/robustness_backtest.py). The in-sample best
 τ = 1.3 was marginally higher (1.377 cumulative) but its weights are not published here.
@@ -68,7 +68,7 @@ volatility and about half the maximum drawdown.
 
 ## 🏗️ How It Works
 
-![LEPOS system flowchart](docs/flowchart/flowchart_current_en.png)
+![PortfolioOpt4ESG system flowchart](docs/flowchart/flowchart_current_en.png)
 
 <sub>ISO 5807 flowchart · editable source: [`docs/flowchart/lepos_flowchart.drawio`](docs/flowchart/lepos_flowchart.drawio)</sub>
 

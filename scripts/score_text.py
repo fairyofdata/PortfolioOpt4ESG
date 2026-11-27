@@ -1,4 +1,4 @@
-"""Score Korean article text with a fine-tuned LEPOS KoELECTRA classifier.
+"""Score Korean article text with a fine-tuned PortfolioOpt4ESG KoELECTRA classifier.
 
 The research pipeline (see ``notebooks/05_model_fine_tuning``) produced a
 cascade of KoELECTRA classifiers: the off-topic filter, the ESG-relevance
@@ -23,7 +23,7 @@ import sys
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Classify Korean text with a fine-tuned LEPOS KoELECTRA model.")
+        description="Classify Korean text with a fine-tuned PortfolioOpt4ESG KoELECTRA model.")
     parser.add_argument(
         "--model", required=True,
         help="Path to a fine-tuned checkpoint directory or a Hugging Face model id")

@@ -1,4 +1,4 @@
-"""LEPOS Streamlit entrypoint.
+"""PortfolioOpt4ESG Streamlit entrypoint.
 
 Run with::
 

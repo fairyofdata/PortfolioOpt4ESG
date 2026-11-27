@@ -1,6 +1,6 @@
-<!-- 原本: README_KR.md（韓国語版が原本、英語・日本語は翻訳） · 同期: 2026-10-26 -->
+<!-- 原本: README_KR.md（韓国語版が原本、英語・日本語は翻訳） · 同期: 2026-11-27 -->
 
-# PortfolioOpt4ESG — LLMベース ESG重視ポートフォリオ最適化 (LEPOS) 📊🌱
+# PortfolioOpt4ESG — LLMベース ESG重視ポートフォリオ最適化 📊🌱
 
 [English](README.md) · [한국어](README_KR.md) · [日本語](README_JP.md)
 
@@ -8,20 +8,20 @@
 > 🏆🥈 光云大学 SW融合大学 2024年卒業展示会 優秀賞(2位)
 > 📄 *Computational Economics*（Springer, 2026）掲載 — [doi:10.1007/s10614-026-11413-9](https://doi.org/10.1007/s10614-026-11413-9)
 
-*サービス名は LEPOS、リポジトリの旧名は `LLM_ESG_POS` です。*
+*リポジトリの旧名は `LLM_ESG_POS` です。フローチャートなど以前の資料には旧サービス名 LEPOS が残っています。*
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
 ![License](https://img.shields.io/badge/license-MIT-green)
 [![tests](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml)
 
-LEPOSは、**LLMとファインチューニングした韓国語言語モデルを用いてニュース記事のテキストから直接**
+PortfolioOpt4ESGは、**LLMとファインチューニングした韓国語言語モデルを用いてニュース記事のテキストから直接**
 韓国上場企業のESG(環境・社会・ガバナンス)を評価し、ユーザーのESG選好を投資家ビューとして
 組み込んだ**ブラック・リターマン最適化**によりパーソナライズされたポートフォリオを構築する
 サービスです。
 
 従来のESG評価は算出根拠が不透明で、評価機関ごとに結果が異なり、大企業しかカバーしません。
-LEPOSはスコアリングのパイプライン全体が透明に公開されており、5つの評価機関(MSCI、S&P、
+PortfolioOpt4ESGはスコアリングのパイプライン全体が透明に公開されており、5つの評価機関(MSCI、S&P、
 Sustainalytics、ISS、KCGS)の評価傾向を学習し、テキストさえあれば評価機関がカバーしない
 企業でもスコアリングできます。
 
@@ -46,9 +46,9 @@ t−1年のスコアでt年をリバランス — 先読みバイアスを除去
 | KOSPI | 1.092 | 0.018 | 0.202 | 0.190 | 0.357 | 0.051 |
 | ESG ETF | 1.159 | 0.031 | 0.203 | 0.251 | 0.352 | 0.087 |
 | 等ウェイト | 1.247 | 0.046 | 0.204 | 0.323 | 0.362 | 0.128 |
-| **LEPOS (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
+| **PortfolioOpt4ESG (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
 
-LEPOSの行は、年別ウェイトファイルがリポジトリに含まれており、
+PortfolioOpt4ESGの行は、年別ウェイトファイルがリポジトリに含まれており、
 [`robustness_backtest.py`](docs/research/robustness_backtest.py)でリターンを独立に再現できる
 τ = 0.5の実験です。標本内の最適値τ = 1.3はわずかに高い値(累積1.377)でしたが、そのウェイト
 ファイルは公開されていません。
@@ -67,7 +67,7 @@ LEPOSの行は、年別ウェイトファイルがリポジトリに含まれて
 
 ## 🏗️ 仕組み
 
-![LEPOS system flowchart](docs/flowchart/flowchart_current_en.png)
+![PortfolioOpt4ESG system flowchart](docs/flowchart/flowchart_current_en.png)
 
 <sub>ISO 5807 フローチャート · 編集用ソース: [`docs/flowchart/lepos_flowchart.drawio`](docs/flowchart/lepos_flowchart.drawio)</sub>
 

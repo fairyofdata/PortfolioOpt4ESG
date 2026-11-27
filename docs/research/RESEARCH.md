@@ -1,4 +1,4 @@
-# LEPOS Post-Graduation Research: Backtesting the LLM-ESG Portfolio
+# PortfolioOpt4ESG Post-Graduation Research: Backtesting the LLM-ESG Portfolio
 
 > After the graduation exhibition (Nov 2024), the optimization model was refined and
 > validated through a series of backtesting experiments (Jan–Mar 2025) conducted for a
@@ -95,9 +95,9 @@ series from the weight tables and prices in this directory:
 | KOSPI | 1.092 | 0.018 | 0.202 | 0.190 | 0.357 | 0.051 |
 | ESG ETF | 1.159 | 0.031 | 0.203 | 0.251 | 0.352 | 0.087 |
 | Equal-weighted (buy-and-hold, net of costs) | 1.222 | 0.042 | 0.200 | 0.305 | 0.353 | 0.119 |
-| LEPOS τ = 0.5 (study's method) | 1.373 | 0.067 | 0.154 | 0.499 | 0.187 | 0.359 |
-| LEPOS τ = 0.5 (buy-and-hold, gross) | 1.330 | 0.060 | 0.153 | 0.457 | 0.182 | 0.330 |
-| **LEPOS τ = 0.5 (buy-and-hold, net of costs)** | **1.319** | **0.058** | **0.153** | **0.447** | **0.182** | **0.321** |
+| PortfolioOpt4ESG τ = 0.5 (study's method) | 1.373 | 0.067 | 0.154 | 0.499 | 0.187 | 0.359 |
+| PortfolioOpt4ESG τ = 0.5 (buy-and-hold, gross) | 1.330 | 0.060 | 0.153 | 0.457 | 0.182 | 0.330 |
+| **PortfolioOpt4ESG τ = 0.5 (buy-and-hold, net of costs)** | **1.319** | **0.058** | **0.153** | **0.447** | **0.182** | **0.321** |
 
 - **Reproduction.** Computed the study's way (target weights held every day, no costs),
   the τ = 0.5 series matches the published figures (1.3732 vs 1.3733), as do both

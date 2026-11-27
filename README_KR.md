@@ -1,6 +1,6 @@
-<!-- 원본: README_KR.md (한국어판이 원본, 영·일은 번역) · 동기화: 2026-10-26 -->
+<!-- 원본: README_KR.md (한국어판이 원본, 영·일은 번역) · 동기화: 2026-11-27 -->
 
-# PortfolioOpt4ESG — LLM 기반 ESG 중심 포트폴리오 최적화 (LEPOS) 📊🌱
+# PortfolioOpt4ESG — LLM 기반 ESG 중심 포트폴리오 최적화 📊🌱
 
 [English](README.md) · [한국어](README_KR.md) · [日本語](README_JP.md)
 
@@ -8,19 +8,19 @@
 > 🏆🥈 광운대학교 SW융합대학 2024년 졸업전시회 우수상(2위)
 > 📄 *Computational Economics*(Springer, 2026) 게재 — [doi:10.1007/s10614-026-11413-9](https://doi.org/10.1007/s10614-026-11413-9)
 
-*서비스 이름은 LEPOS, 저장소 옛 이름은 `LLM_ESG_POS` 입니다.*
+*저장소 옛 이름은 `LLM_ESG_POS` 입니다. 순서도 등 이전 자료에는 옛 서비스 이름 LEPOS가 남아 있습니다.*
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B)
 ![License](https://img.shields.io/badge/license-MIT-green)
 [![tests](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml/badge.svg)](https://github.com/fairyofdata/PortfolioOpt4ESG/actions/workflows/tests.yml)
 
-LEPOS는 **LLM과 파인튜닝된 한국어 언어 모델로 뉴스 텍스트에서 직접** 국내 상장사의
+PortfolioOpt4ESG는 **LLM과 파인튜닝된 한국어 언어 모델로 뉴스 텍스트에서 직접** 국내 상장사의
 ESG(환경/사회/지배구조)를 평가하고, 사용자의 ESG 선호도를 투자자 전망(view)으로
 반영하는 **Black-Litterman 최적화**로 개인 맞춤형 포트폴리오를 구성하는 서비스입니다.
 
 기존 ESG 평가는 산출 근거가 불투명하고, 기관마다 결과가 다르며, 대기업만 커버합니다.
-LEPOS는 스코어링 파이프라인 전체가 투명하게 공개되어 있고, 5개 평가기관(MSCI, S&P,
+PortfolioOpt4ESG는 스코어링 파이프라인 전체가 투명하게 공개되어 있고, 5개 평가기관(MSCI, S&P,
 Sustainalytics, ISS, ESG기준원)의 평가 경향을 학습하며, 텍스트만 있으면 되기 때문에
 평가기관이 커버하지 않는 기업도 평가할 수 있습니다.
 
@@ -45,9 +45,9 @@ t년 리밸런싱 — 룩어헤드 편향 제거)로 검증했습니다. 심사�
 | KOSPI | 1.092 | 0.018 | 0.202 | 0.190 | 0.357 | 0.051 |
 | ESG ETF | 1.159 | 0.031 | 0.203 | 0.251 | 0.352 | 0.087 |
 | 균등비중 | 1.247 | 0.046 | 0.204 | 0.323 | 0.362 | 0.128 |
-| **LEPOS (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
+| **PortfolioOpt4ESG (τ = 0.5)** | **1.373** | **0.067** | **0.154** | **0.499** | **0.187** | **0.359** |
 
-LEPOS 행은 연도별 비중 파일이 레포에 포함되어 있고
+PortfolioOpt4ESG 행은 연도별 비중 파일이 레포에 포함되어 있고
 [`robustness_backtest.py`](docs/research/robustness_backtest.py)로 수익률을 독립 재현할 수 있는
 τ = 0.5 실험입니다. 표본 내 최적값인 τ = 1.3은 근소하게 더 높았지만(누적 1.377) 비중 파일이
 공개되어 있지 않습니다.
@@ -66,7 +66,7 @@ LEPOS 행은 연도별 비중 파일이 레포에 포함되어 있고
 
 ## 🏗️ 동작 원리
 
-![LEPOS 시스템 순서도](docs/flowchart/flowchart_current_kr.png)
+![PortfolioOpt4ESG 시스템 순서도](docs/flowchart/flowchart_current_kr.png)
 
 <sub>KS X ISO 5807 순서도 · 편집 원본: [`docs/flowchart/lepos_flowchart.drawio`](docs/flowchart/lepos_flowchart.drawio)</sub>
 

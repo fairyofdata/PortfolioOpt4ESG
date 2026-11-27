@@ -1,4 +1,4 @@
-"""Central path and constant configuration for LEPOS.
+"""Central path and constant configuration for PortfolioOpt4ESG.
 
 Every module resolves data files through this module so the project can be
 run from any working directory.

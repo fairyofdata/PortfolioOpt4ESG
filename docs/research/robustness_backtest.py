@@ -1,4 +1,4 @@
-"""Reproduction and transaction-cost check for the LEPOS backtesting study.
+"""Reproduction and transaction-cost check for the PortfolioOpt4ESG backtesting study.
 
 Rebuilds the portfolio return series from the published yearly weight tables
 and the KRX price snapshot in this directory, in three ways:
@@ -132,9 +132,9 @@ def main() -> None:
         "ESG ETF": metrics(benchmark_returns["ESG_ETF"]),
         "Equal-weighted (published method)": metrics(backtest(prices, equal, "constant_mix")),
         "Equal-weighted (buy-and-hold, net)": metrics(backtest(prices, equal, "buy_hold_net")),
-        "LEPOS tau=0.5 (published method)": metrics(backtest(prices, esg, "constant_mix")),
-        "LEPOS tau=0.5 (buy-and-hold, gross)": metrics(backtest(prices, esg, "buy_hold")),
-        "LEPOS tau=0.5 (buy-and-hold, net)": metrics(backtest(prices, esg, "buy_hold_net")),
+        "PortfolioOpt4ESG tau=0.5 (published method)": metrics(backtest(prices, esg, "constant_mix")),
+        "PortfolioOpt4ESG tau=0.5 (buy-and-hold, gross)": metrics(backtest(prices, esg, "buy_hold")),
+        "PortfolioOpt4ESG tau=0.5 (buy-and-hold, net)": metrics(backtest(prices, esg, "buy_hold_net")),
     }
     table = pd.DataFrame(rows).T
     pd.set_option("display.float_format", lambda v: f"{v:.4f}")

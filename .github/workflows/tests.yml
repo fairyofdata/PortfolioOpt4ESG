@@ -1,4 +1,4 @@
-# Steps come from the shared reusable workflows in fairyofdata/Concordia (docs/DECISIONS.md D1).
+# Steps come from the shared reusable workflows in fairyofdata/Concordia (docs/adr/0001).
 name: tests
 
 on:
